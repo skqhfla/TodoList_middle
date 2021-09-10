@@ -36,13 +36,12 @@ public class TodoList {
 	}
 
 	public void listAll() {
-		System.out.println("\n"
-				+ "inside list_All method\n");
+		System.out.println("\n" + "inside list_All method\n");
 		for (TodoItem myitem : list) {
 			System.out.println(myitem.getTitle() + myitem.getDesc());
 		}
 	}
-	
+
 	public void reverseList() {
 		Collections.reverse(list);
 	}
@@ -57,7 +56,8 @@ public class TodoList {
 
 	public Boolean isDuplicate(String title) {
 		for (TodoItem item : list) {
-			if (title.equals(item.getTitle())) return true;
+			if (title.equals(item.getTitle()))
+				return true;
 		}
 		return false;
 	}

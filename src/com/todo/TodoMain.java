@@ -7,9 +7,9 @@ import com.todo.menu.Menu;
 import com.todo.service.TodoUtil;
 
 public class TodoMain {
-	
+
 	public static void start() {
-	
+
 		Scanner sc = new Scanner(System.in);
 		TodoList l = new TodoList();
 		boolean isList = false;
@@ -23,15 +23,15 @@ public class TodoMain {
 			case "add":
 				TodoUtil.createItem(l);
 				break;
-			
+
 			case "del":
 				TodoUtil.deleteItem(l);
 				break;
-				
+
 			case "edit":
 				TodoUtil.updateItem(l);
 				break;
-				
+
 			case "ls":
 				TodoUtil.listAll(l);
 				break;
@@ -46,7 +46,7 @@ public class TodoMain {
 				l.reverseList();
 				isList = true;
 				break;
-				
+
 			case "ls_date":
 				l.sortByDate();
 				isList = true;
@@ -60,8 +60,9 @@ public class TodoMain {
 				System.out.println("please enter one of the above mentioned command");
 				break;
 			}
-			
-			if(isList) l.listAll();
+
+			if (isList)
+				l.listAll();
 		} while (!quit);
 	}
 }
