@@ -18,7 +18,6 @@ public class TodoUtil {
 
 	public TodoUtil() {
 		this.list = new ArrayList<TodoItem>();
-		System.out.println("OK");
 	}
 		
 	public void saveList(TodoList l, String filename) {
