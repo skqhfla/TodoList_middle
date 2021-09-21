@@ -12,28 +12,31 @@ public class TodoMain {
 
 		Scanner sc = new Scanner(System.in);
 		TodoList l = new TodoList();
+		TodoUtil u = new TodoUtil();
 		boolean isList = false;
 		boolean quit = false;
+		u.loadList(l, "D:/공부/한동/한동 4학기/실전프로젝트/todolist.txt");
+		Menu.displaymenu();
 		do {
-			Menu.displaymenu();
+			Menu.prompt();
 			isList = false;
 			String choice = sc.next();
 			switch (choice) {
 
 			case "add":
-				TodoUtil.createItem(l);
+				u.createItem(l);
 				break;
 
 			case "del":
-				TodoUtil.deleteItem(l);
+				u.deleteItem(l);
 				break;
 
 			case "edit":
-				TodoUtil.updateItem(l);
+				u.updateItem(l);
 				break;
 
 			case "ls":
-				TodoUtil.listAll(l);
+				u.listAll(l);
 				break;
 
 			case "ls_name_asc":
@@ -55,14 +58,20 @@ public class TodoMain {
 			case "exit":
 				quit = true;
 				break;
+				
+			case "help" :
+				Menu.displaymenu();
+				break;
 
 			default:
-				System.out.println("please enter one of the above mentioned command");
+				System.out.println("명령어를 다시 입력해 주세요 - 명령어 다시보기(help)");
 				break;
 			}
 
 			if (isList)
 				l.listAll();
 		} while (!quit);
+		
+		u.saveList(l,"D:/공부/한동/한동 4학기/실전프로젝트/todolist.txt");
 	}
 }
