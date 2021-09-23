@@ -43,7 +43,7 @@ public class TodoUtil {
 	
 	public void loadList(TodoList l, String filename) {
 		int index = 0;
-		String title, desc;
+		String title, desc, time;
 		try {
 			FileReader fr = new FileReader(filename);
 			BufferedReader in = new BufferedReader(fr);	
@@ -54,7 +54,8 @@ public class TodoUtil {
 					StringTokenizer st = new StringTokenizer(line, "##");
 					title = st.nextToken();
 					desc = st.nextToken();
-					TodoItem t = new TodoItem(title, desc);
+					time = st.nextToken();
+					TodoItem t = new TodoItem(title, desc, time);
 					l.addItem(t);
 				}
 			} catch (IOException e) {

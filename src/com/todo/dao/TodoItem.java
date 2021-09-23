@@ -14,7 +14,14 @@ public class TodoItem {
 		SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
 		this.current_date = f.format(new Date());
 	}
-
+	
+	public TodoItem(String title, String desc, String time) {
+		this.title = title;
+		this.desc = desc;
+		this.current_date = time;
+	}
+	
+	
 	public String getTitle() {
 		return title;
 	}
