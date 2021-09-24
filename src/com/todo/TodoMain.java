@@ -62,6 +62,23 @@ public class TodoMain {
 			case "help" :
 				Menu.displaymenu();
 				break;
+			
+			case "find" :
+				u.fine(l);
+				break;
+			
+			case "ls_date_desc" :
+				l.sortByDatedesc();
+				isList = true;
+				break;
+			
+			case "find_cate" : 
+				u.fine_cate(l);
+				break;
+				
+			case "ls_cate" : 
+				u.ls_cate(l);
+				break;
 
 			default:
 				System.out.println("명령어를 다시 입력해 주세요 - 명령어 다시보기(help)");

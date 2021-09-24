@@ -3,6 +3,7 @@ package com.todo.dao;
 import java.util.*;
 
 import com.todo.service.TodoSortByDate;
+import com.todo.service.TodoSortByDateDesc;
 import com.todo.service.TodoSortByName;
 
 public class TodoList {
@@ -50,6 +51,10 @@ public class TodoList {
 		Collections.sort(list, new TodoSortByDate());
 	}
 
+	public void sortByDatedesc() {
+		Collections.sort(list, new TodoSortByDateDesc());
+	}
+	
 	public int indexOf(TodoItem t) {
 		return list.indexOf(t);
 	}
@@ -60,5 +65,30 @@ public class TodoList {
 				return true;
 		}
 		return false;
+	}
+	
+	public int getSize() {
+		return list.size();
+	}
+	
+	public int contains(String k, TodoItem item) {
+		if (item.getCategory().contains(k))
+			return list.indexOf(item);
+		else if(item.getTitle().contains(k))
+			return list.indexOf(item);
+		else if(item.getDesc().contains(k))
+			return list.indexOf(item);
+		else if(item.getDuedate().contains(k))
+			return list.indexOf(item);
+		else if(item.getCurrent_date().contains(k))
+			return list.indexOf(item);
+		return -1;
+	}
+	
+	public int contains_cate(String k, TodoItem item) {
+		if (item.getCategory().contains(k))
+			return list.indexOf(item);
+		
+		return -1;
 	}
 }
