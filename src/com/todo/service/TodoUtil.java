@@ -37,7 +37,7 @@ public class TodoUtil {
 		      
 		    } 
 		    catch (IOException e) {
-		      System.out.println("¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		      System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 		      e.printStackTrace();
 		    }
 	}
@@ -62,172 +62,114 @@ public class TodoUtil {
 					l.addItem(t);
 				}
 			} catch (IOException e) {
-				System.out.println("¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 			}
 
 		} catch (FileNotFoundException e) {
-			System.out.println("ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 
 
 		
 	}
 
-	public void createItem(TodoList list) {
+	public void createItem(TodoList l) {
 
 		String category, title, desc, due_date;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("\n" + "========== Ç×¸ñ Ãß°¡\n" + "Ä«µ¥°í¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä.\n");
-		
-		category = sc.next();
-
-		System.out.println("Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä.\n");
-
+		System.out.println("[í•­ëª© ì¶”ê°€]\n" + "ì œëª© > ");
 		title = sc.next();
-		if (list.isDuplicate(title)) {
-			System.out.println("Á¦¸ñ Áßº¹");
+		
+		if(l.isDuplicate(title)) {
+			System.out.println("ì œëª©ì´ ì¤‘ë³µë©ë‹ˆë‹¤!");
 			return;
 		}
-
+		
+		System.out.println("ì¹´í…Œê³ ë¦¬ > ");
+		category = sc.next();
+		
 		sc.nextLine();
-		System.out.println("ÇÒÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		
+		System.out.println("ë‚´ìš© > ");
 		desc = sc.nextLine().trim();
 		
-		System.out.println("¸¶°¨³¯Â¥¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
-		due_date = sc.next();
+		System.out.println("ë§ˆê°ì¼ì > ");
+		due_date = sc.nextLine().trim();
 
 		TodoItem t = new TodoItem(category, title, desc, due_date);
-		list.addItem(t);
-		System.out.println("Ãß°¡µÇ¾ú½À´Ï´Ù.");
+		if(l.addItem(t)>0)
+			System.out.println("ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
-	public void deleteItem(TodoList l) {
-		int num;
+	public static void deleteItem(TodoList l) {
 		Scanner sc = new Scanner(System.in);
-
-		System.out.println("\n" + "========== Ç×¸ñ »èÁ¦\n" + "»èÁ¦ÇÒ Ç×¸ñÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä\n" + "\n");
-		num = sc.nextInt();
-		num  = num-1;
-		for (TodoItem item : l.getList()) {
-			if(num == l.indexOf(item)) {
-				l.deleteItem(item);
-				System.out.println("»èÁ¦µÇ¾ú½À´Ï´Ù.");
-				break;
-			}
-		}
+		System.out.print("[í•­ëª© ì‚­]\n" + "ì‚­ì œí•  í•­ëª©ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ > ");
+		int index = sc.nextInt();
+		if(l.deleteItem(index) > 0)
+			System.out.println("ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 	public void updateItem(TodoList l) {
-		int num;
-
+		
+		String new_category, new_title, new_desc, new_due_date;
 		Scanner sc = new Scanner(System.in);
-
-		System.out.println(
-				"\n" + "========== Ç×¸ñ ¼öÁ¤\n" + "¼öÁ¤ÇÏ°í ½ÍÀº Ç×¸ñÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä\n" + "\n");
-		num = sc.nextInt();
-		if (num>l.getSize()) {
-			System.out.println("Ç×¸ñÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù");
-			return;
-		}
 		
-		System.out.println("»õ·Î¿î Ä«µ¥°í¸®¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-		String new_category = sc.next();
+		System.out.println("[í•­ëª© ì¶”ê°€]\n" + "ìˆ˜ì •í•  í•­ëª©ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ > ");
+		int index = sc.nextInt();
 		
-		System.out.println("Ç×¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
-		String new_title = sc.next();
-		if (l.isDuplicate(new_title)) {
-			System.out.println("ÀÌ¹Ì Á¸ÀçÇÏ´Â Ç×¸ñÀÔ´Ï´Ù.");
-			return;
-		}
+		System.out.println("ìƒˆ ì œëª© > ");
+		new_title = sc.next();
+		
+		System.out.println("ìƒˆ ì¹´í…Œê³ ë¦¬ > ");
+		new_category = sc.next();
 		
 		sc.nextLine();
-		System.out.println("ÇÒÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
-		String new_description = sc.nextLine().trim();
 		
-		System.out.println("¸¶°¨ ³¯Â¥¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-		String new_due_date = sc.next();
-		num = num-1;
-		for (TodoItem item : l.getList()) {
-			if (num == l.indexOf(item)) {
-				l.deleteItem(item);
-				TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date);
-				l.addItem(t);
-				System.out.println("º¯°æµÇ¾ú½À´Ï´Ù.");
-			}
-		}
-
+		System.out.println("ìƒˆ ë‚´ìš© > ");
+		new_desc = sc.nextLine().trim();
+		
+		System.out.println("ìƒˆ ë§ˆê°ì¼ì > ");
+		new_due_date = sc.nextLine().trim();
+		
+		TodoItem t = new TodoItem(new_category, new_title, new_desc, new_due_date);
+		t.setId(index);
+		if(l.updateItem(t) > 0)
+				System.out.println("ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
-	public void listAll(TodoList l) {
-		System.out.println("[ÀüÃ¼ ¸ñ·Ï, ÃÑ " + l.getSize() + "°³]");
-		int i = 1;
+	public void listAll(TodoList l, String orderby, int ordering) {
+		System.out.println("[ì „ì²´ ëª©ë¡ ì´ " + l.getCount() + "]");
 		
-		for (TodoItem item : l.getList()) {
-			System.out.println(i + ". " + item.toString());
-			i++;
+		for (TodoItem item : l.getOrderedList(orderby, ordering)) {
+			System.out.println(item.toString());
 		}
 	}
 	
-	public void fine(TodoList l) {
-		System.out.println("Ã£°íÀÚ ÇÏ´Â Å°¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		Scanner sc = new Scanner(System.in);
-		String k = sc.next();
+	public void fineList(TodoList l, String keyword) {
 		int count = 0;
-		
-		for (TodoItem item : l.getList()) {
-			if(l.contains(k,item) != -1) {
-				count++;
-				System.out.println(count + ". " + item.toString());
-			}
+		for(TodoItem item : l.getList(keyword)) {
+			System.out.println(item.toString());
+			count++;
 		}
-		
-		if(count != 0) {
-			System.out.println("ÃÑ " + count + "°³ÀÇ Ç×¸ñÀ» Ã£¾Ò½À´Ï´Ù.");
-			return;
-		}
-		
-		System.out.println("ÀÏÄ¡ÇÏ´Â Ç×¸ñÀ» Ã£Áö ¸øÇÏ¿´½À´Ï´Ù.");
-		return;
+		System.out.printf("ì´ %dê°œì˜ í•­ëª©ì„ ì°¾ì•˜ìŠµë‹ˆë‹¤.\n", count);
 	}
 	
-	public void fine_cate(TodoList l) {
-		System.out.println("Ã£°íÀÚ ÇÏ´Â Ä«Å×°í¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		Scanner sc = new Scanner(System.in);
-		String k = sc.next();
+	public void fineCateList(TodoList l, String cate) {
 		int count = 0;
-		
-		for (TodoItem item : l.getList()) {
-			if(l.contains_cate(k,item) != -1) {
-				count++;
-				System.out.println(count + ". " + item.toString());
-			}
+		for(TodoItem item : l.getListCategory(cate)) {
+			System.out.println(item.toString());
+			count++;
 		}
-		
-		if(count != 0) {
-			System.out.println("ÃÑ " + count + "°³ÀÇ Ç×¸ñÀ» Ã£¾Ò½À´Ï´Ù.");
-			return;
-		}
-		
-		System.out.println("ÀÏÄ¡ÇÏ´Â Ç×¸ñÀ» Ã£Áö ¸øÇÏ¿´½À´Ï´Ù.");
-		return;
+		System.out.printf("\nì´ %dê°œì˜ í•­ëª©ì„ ì°¾ì•˜ìŠµë‹ˆë‹¤.\n", count);
 	}
 	
-	public void ls_cate(TodoList l) {
-		Set<String> clist = new HashSet<String>();
-		
-		for(TodoItem c : l.getList()) {
-			clist.add(c.getCategory());
+	public void listCateAll(TodoList l) {
+		int count = 0;
+		for(String item : l.getCategories()) {
+			System.out.print(item + " ");
+			count++;
 		}
-		
-		Iterator it = clist.iterator();
-		while(it.hasNext()) {
-			String s = (String)it.next();
-			System.out.print(s);
-			if(it.hasNext())
-				System.out.print(" / ");
-		}
-		
-		System.out.printf("\nÃÑ %d°³ÀÇ Ä«Å×°í¸®°¡ µî·ÏµÇ¾î ÀÖ½À´Ï´Ù.\n", clist.size());
+		System.out.printf("\nì´ %dê°œì˜ ì¹´í…Œê³ ë¦¬ê°€ ë“±ë¡ë˜ì–´ ìˆìŠµë‹ˆë‹¤.\n", count);
 	}
 }

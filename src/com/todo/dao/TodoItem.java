@@ -27,6 +27,10 @@ public class TodoItem {
 		this.current_date = time;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	
 	public String getCategory() {
 		return category;
 	}

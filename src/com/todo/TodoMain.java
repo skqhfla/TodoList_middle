@@ -12,10 +12,11 @@ public class TodoMain {
 
 		Scanner sc = new Scanner(System.in);
 		TodoList l = new TodoList();
+		l.importData("todolist.txt");
 		TodoUtil u = new TodoUtil();
 		boolean isList = false;
 		boolean quit = false;
-		u.loadList(l, "D:/°øºÎ/ÇÑµ¿/ÇÑµ¿ 4ÇÐ±â/½ÇÀüÇÁ·ÎÁ§Æ®/todolist.txt");
+		u.loadList(l, "D:/ï¿½ï¿½ï¿½ï¿½/ï¿½Ñµï¿½/ï¿½Ñµï¿½ 4ï¿½Ð±ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®/todolist.txt");
 		Menu.displaymenu();
 		do {
 			Menu.prompt();
@@ -40,19 +41,18 @@ public class TodoMain {
 				break;
 
 			case "ls_name_asc":
-				l.sortByName();
-				isList = true;
+				System.out.println("ì œëª©ìˆœìœ¼ë¡œ ì •ë ¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
+				u.listAll(l, "title", 1);
 				break;
 
 			case "ls_name_desc":
-				l.sortByName();
-				l.reverseList();
-				isList = true;
+				System.out.println("ì œëª©ì—­ìˆœìœ¼ë¡œ ì •ë ¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
+				u.listAll(l, "title", 0);
 				break;
 
 			case "ls_date":
-				l.sortByDate();
-				isList = true;
+				System.out.println("ë‚ ì§œìˆœìœ¼ë¡œ ì •ë ¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
+				u.listAll(l, "due_date", 1);
 				break;
 
 			case "exit":
@@ -64,16 +64,18 @@ public class TodoMain {
 				break;
 			
 			case "find" :
-				u.fine(l);
+				String keyword = sc.nextLine().trim();
+				u.findList(1,keyword);
 				break;
 			
 			case "ls_date_desc" :
-				l.sortByDatedesc();
-				isList = true;
+				System.out.println("ë‚ ì§œì—­ìˆœìœ¼ë¡œ ì •ë ¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
+				u.listAll(l, "due_date", 0);
 				break;
 			
 			case "find_cate" : 
-				u.fine_cate(l);
+				String cate = sc.nextLine().trim();
+				u.findCateList(l,cate);
 				break;
 				
 			case "ls_cate" : 
@@ -81,7 +83,7 @@ public class TodoMain {
 				break;
 
 			default:
-				System.out.println("¸í·É¾î¸¦ ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä - ¸í·É¾î ´Ù½Ãº¸±â(help)");
+				System.out.println("ï¿½ï¿½É¾î¸¦ ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½ - ï¿½ï¿½É¾ï¿½ ï¿½Ù½Ãºï¿½ï¿½ï¿½(help)");
 				break;
 			}
 
@@ -89,6 +91,6 @@ public class TodoMain {
 				l.listAll();
 		} while (!quit);
 		
-		u.saveList(l,"D:/°øºÎ/ÇÑµ¿/ÇÑµ¿ 4ÇÐ±â/½ÇÀüÇÁ·ÎÁ§Æ®/todolist.txt");
+		u.saveList(l,"D:/ï¿½ï¿½ï¿½ï¿½/ï¿½Ñµï¿½/ï¿½Ñµï¿½ 4ï¿½Ð±ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®/todolist.txt");
 	}
 }
