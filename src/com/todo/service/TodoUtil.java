@@ -37,7 +37,7 @@ public class TodoUtil {
 		      
 		    } 
 		    catch (IOException e) {
-		      System.out.println("������ �߻��߽��ϴ�.");
+		      System.out.println("에러가 발생했습니.");
 		      e.printStackTrace();
 		    }
 	}
@@ -62,7 +62,7 @@ public class TodoUtil {
 					l.addItem(t);
 				}
 			} catch (IOException e) {
-				System.out.println("������ �߻��߽��ϴ�.");
+				System.out.println("에러가 발생했습니다.");
 			}
 
 		} catch (FileNotFoundException e) {
@@ -102,7 +102,7 @@ public class TodoUtil {
 			System.out.println("추가되었습니다.");
 	}
 
-	public static void deleteItem(TodoList l) {
+	public void deleteItem(TodoList l) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("[항목 삭]\n" + "삭제할 항목의 번호를 입력하시오 > ");
 		int index = sc.nextInt();
@@ -141,21 +141,20 @@ public class TodoUtil {
 	public void listAll(TodoList l, String orderby, int ordering) {
 		System.out.println("[전체 목록 총 " + l.getCount() + "]");
 		
-		for (TodoItem item : l.getOrderedList(orderby, ordering)) {
+		for (TodoItem item : l.getOrderList(orderby, ordering)) {
 			System.out.println(item.toString());
 		}
 	}
 	
-	public void fineList(TodoList l, String keyword) {
-		int count = 0;
-		for(TodoItem item : l.getList(keyword)) {
+	public void listAll(TodoList l) {
+		System.out.println("[전체 목록 총 " + l.getCount() + "]");
+		
+		for (TodoItem item : l.getList()) {
 			System.out.println(item.toString());
-			count++;
 		}
-		System.out.printf("총 %d개의 항목을 찾았습니다.\n", count);
 	}
-	
-	public void fineCateList(TodoList l, String cate) {
+
+	public void findCateList(TodoList l, String cate) {
 		int count = 0;
 		for(TodoItem item : l.getListCategory(cate)) {
 			System.out.println(item.toString());
@@ -163,7 +162,16 @@ public class TodoUtil {
 		}
 		System.out.printf("\n총 %d개의 항목을 찾았습니다.\n", count);
 	}
-	
+
+	public void findList(TodoList l, String keyword) {
+		int count = 0;
+		for(TodoItem item : l.getList(keyword)) {
+			System.out.println(item.toString());
+			count++;
+		}
+		System.out.printf("총 %d개의 항목을 찾았습니다.\n", count);
+	}
+
 	public void listCateAll(TodoList l) {
 		int count = 0;
 		for(String item : l.getCategories()) {

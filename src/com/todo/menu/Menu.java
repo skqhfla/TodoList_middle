@@ -4,21 +4,21 @@ public class Menu {
 
 	public static void displaymenu() {
 		System.out.println();
-		System.out.println("1. add - Ç×¸ñ Ãß°¡");
-		System.out.println("2. del - Ç×¸ñ »èÁ¦");
-		System.out.println("3. edit - Ç×¸ñ ¼öÁ¤");
-		System.out.println("4. ls - ÀüÃ¼ ¸ñ·Ï");
-		System.out.println("5. ls_name_asc - Á¦¸ñ¼ø Á¤·Ä");
-		System.out.println("6. ls_name_desc - Á¦¸ñ¿ª¼ø Á¤·Ä");
-		System.out.println("7. ls_date - ³¯Â¥¼ø Á¤·Ä");
-		System.out.println("8. ls_date_desc - ³¯Â¥¿ª¼ø Á¤·Ä");
-		System.out.println("9. find - Ç×¸ñ Ã£±â");
-		System.out.println("9. find_cate - Ä«Å×°í¸® Ã£±â");
-		System.out.println("10. exit - Á¾·á");
+		System.out.println("1. add - í•­ëª© ì¶”ê°€");
+		System.out.println("2. del - í•­ëª© ì‚­ì œ");
+		System.out.println("3. edit - í•­ëª© ìˆ˜ì •");
+		System.out.println("4. ls - ì „ì²´ ëª©ë¡");
+		System.out.println("5. ls_name_asc - ìž¬ëª©ìˆœ ì •ë ¬");
+		System.out.println("6. ls_name_desc - ì œëª©ì—­ìˆœ ì •ë ¬");
+		System.out.println("7. ls_date - ë‚ ì§œìˆœ ì •ë ¬");
+		System.out.println("8. ls_date_desc - ë‚ ì§œì—­ìˆœ ì •ë ¬");
+		System.out.println("9. find - í•­ëª© ì°¾ê¸°");
+		System.out.println("9. find_cate - ì¹´í…Œê³ ë¦¬ ì°¾ê¸°");
+		System.out.println("10. exit - ì¢…ë£Œ");
 	}
 	
 	public static void prompt() {
-		System.out.println("\n¸í·É¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä >");
+		System.out.println("\nëª…ë ¹ì–´ë¥¼ ìž…ë ¥í•˜ì„¸ìš” >");
 	}
 	
 }

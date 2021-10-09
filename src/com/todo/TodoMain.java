@@ -16,7 +16,7 @@ public class TodoMain {
 		TodoUtil u = new TodoUtil();
 		boolean isList = false;
 		boolean quit = false;
-		u.loadList(l, "D:/����/�ѵ�/�ѵ� 4�б�/����������Ʈ/todolist.txt");
+		u.loadList(l, "todolist.txt");
 		Menu.displaymenu();
 		do {
 			Menu.prompt();
@@ -54,6 +54,11 @@ public class TodoMain {
 				System.out.println("날짜순으로 정렬하였습니다.");
 				u.listAll(l, "due_date", 1);
 				break;
+			
+			case "ls_date_desc" :
+				System.out.println("날짜역순으로 정렬하였습니다.");
+				u.listAll(l, "due_date", 0);
+				break;
 
 			case "exit":
 				quit = true;
@@ -65,12 +70,7 @@ public class TodoMain {
 			
 			case "find" :
 				String keyword = sc.nextLine().trim();
-				u.findList(1,keyword);
-				break;
-			
-			case "ls_date_desc" :
-				System.out.println("날짜역순으로 정렬하였습니다.");
-				u.listAll(l, "due_date", 0);
+				u.findList(l,keyword);
 				break;
 			
 			case "find_cate" : 
@@ -79,11 +79,11 @@ public class TodoMain {
 				break;
 				
 			case "ls_cate" : 
-				u.ls_cate(l);
+				u.listCateAll(l);
 				break;
 
 			default:
-				System.out.println("��ɾ �ٽ� �Է��� �ּ��� - ��ɾ� �ٽú���(help)");
+				System.out.println("명령어를 다시 입력해 주세요 - 명령어 다시보기(help)");
 				break;
 			}
 
@@ -91,6 +91,6 @@ public class TodoMain {
 				l.listAll();
 		} while (!quit);
 		
-		u.saveList(l,"D:/����/�ѵ�/�ѵ� 4�б�/����������Ʈ/todolist.txt");
+		u.saveList(l,"todolist.txt");
 	}
 }

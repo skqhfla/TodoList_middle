@@ -23,19 +23,37 @@ public class TodoList {
 
 	public int addItem(TodoItem t) {
 		String sql = "insert into list (title, memo, category, current_date, due_date)" + " values (?,?,?,?,?);";
-		PreparedStatement pstmt;
+		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
+			System.out.println("succese");
 			pstmt = conn.prepareStatement(sql);
+			System.out.println("succese0");
 			pstmt.setString(1, t.getTitle());
+			System.out.println("succese1");
 			pstmt.setString(2, t.getDesc());
+			System.out.println("succese2");
 			pstmt.setString(3, t.getCategory());
+			System.out.println("succese3");
 			pstmt.setString(4, t.getCurrent_date());
+			System.out.println("succese4");
 			pstmt.setString(5, t.getDuedate());
+			System.out.println("succese5");
 			count = pstmt.executeUpdate();
-			pstmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) {
+					pstmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			
+			}
 		}
 		return count;
 	}
@@ -66,7 +84,7 @@ public class TodoList {
 			pstmt.setString(3, t.getCategory());
 			pstmt.setString(4, t.getCurrent_date());
 			pstmt.setString(5, t.getDuedate());
-			pstmt.setString(6, t.getId());
+			pstmt.setInt(6, t.getId());
 			count = pstmt.executeUpdate();
 			pstmt.close();
 		} catch(SQLException e) {
@@ -88,7 +106,7 @@ public class TodoList {
 		return list;
 	}
 
-	public ArrayList<TodoItem> getList(String keyword) {
+	public ArrayList<TodoItem> getList(String keyword){
 		ArrayList<TodoItem> list = new ArrayList<TodoItem>();
 		PreparedStatement pstmt;
 		keyword = "%" + keyword + "%";
@@ -98,7 +116,33 @@ public class TodoList {
 			pstmt.setString(1,keyword);
 			pstmt.setString(2, keyword);
 			ResultSet rs = pstmt.executeQuery();
-		} catch (Exception e) {
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public ArrayList<TodoItem> getList(){
+		ArrayList<TodoItem> list = new ArrayList<TodoItem>();
+		Statement stmt;
+		try {
+			stmt = conn.createStatement();
+			String sql = "SELECT * FROM list";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				String category = rs.getString("category");
+				String title = rs.getString("title");
+				String description = rs.getString("memo");
+				String due_date = rs.getString("due_date");
+				String current_date = rs.getString("current_date");
+				TodoItem t = new TodoItem(title, description, category, due_date);
+				t.setId(id);
+				t.setCurrent_date(current_date);
+				list.add(t);				
+			}
+			stmt.close();
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
@@ -118,35 +162,16 @@ public class TodoList {
 		return list;
 	}
 
-	public void sortByName() {
-		Collections.sort(list, new TodoSortByName());
-
-	}
-
 	public void listAll() {
+		ArrayList<TodoItem> list = new ArrayList<TodoItem>();
 		System.out.println("\n" + "inside list_All method\n");
 		for (TodoItem myitem : list) {
 			System.out.println(myitem.getTitle() + " " +myitem.getDesc());
 		}
 	}
 
-	public void reverseList() {
-		Collections.reverse(list);
-	}
-
-	public void sortByDate() {
-		Collections.sort(list, new TodoSortByDate());
-	}
-
-	public void sortByDatedesc() {
-		Collections.sort(list, new TodoSortByDateDesc());
-	}
-	
-	public int indexOf(TodoItem t) {
-		return list.indexOf(t);
-	}
-
 	public Boolean isDuplicate(String title) {
+		ArrayList<TodoItem> list = new ArrayList<TodoItem>();
 		for (TodoItem item : list) {
 			if (title.equals(item.getTitle()))
 				return true;
@@ -169,28 +194,6 @@ public class TodoList {
 		}
 		return count;
 	}
-	
-	public int contains(String k, TodoItem item) {
-		if (item.getCategory().contains(k))
-			return list.indexOf(item);
-		else if(item.getTitle().contains(k))
-			return list.indexOf(item);
-		else if(item.getDesc().contains(k))
-			return list.indexOf(item);
-		else if(item.getDuedate().contains(k))
-			return list.indexOf(item);
-		else if(item.getCurrent_date().contains(k))
-			return list.indexOf(item);
-		return -1;
-	}
-	
-	public int contains_cate(String k, TodoItem item) {
-		if (item.getCategory().contains(k))
-			return list.indexOf(item);
-		
-		return -1;
-	}
-	
 	
 	public void importData(String filename) {
 		try {
