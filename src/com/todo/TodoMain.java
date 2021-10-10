@@ -12,11 +12,10 @@ public class TodoMain {
 
 		Scanner sc = new Scanner(System.in);
 		TodoList l = new TodoList();
-		l.importData("todolist.txt");
+		//l.importData("todolist.txt");
 		TodoUtil u = new TodoUtil();
 		boolean isList = false;
 		boolean quit = false;
-		u.loadList(l, "todolist.txt");
 		Menu.displaymenu();
 		do {
 			Menu.prompt();
@@ -34,6 +33,10 @@ public class TodoMain {
 
 			case "edit":
 				u.updateItem(l);
+				break;
+				
+			case "comp":
+				u.completeItem(l);
 				break;
 
 			case "ls":
@@ -58,6 +61,11 @@ public class TodoMain {
 			case "ls_date_desc" :
 				System.out.println("날짜역순으로 정렬하였습니다.");
 				u.listAll(l, "due_date", 0);
+				break;
+				
+			case "ls_comp":
+				System.out.println("완료된 항목입니다.");
+				u.listAll(l, 1);
 				break;
 
 			case "exit":
