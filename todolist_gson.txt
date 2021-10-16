@@ -1,0 +1,50 @@
+{"category":"과제","title":"실전프로젝트","desc":"6주차 실습과제","due_date":"2021.10.10","current_date":"2021/10/10 14.49.01","is_completed":1,"id":1}
+{"category":"과제","title":"이산수학","desc":"연습문제 풀기","due_date":"2021.10.11","current_date":"2021/10/10 14.58.30","is_completed":0,"id":2}
+{"category":"과제","title":"공학설계입문","desc":"assignment 2","due_date":"2021.10.11","current_date":"2021/10/10 15.04.26","is_completed":1,"id":3}
+{"category":"과제","title":"컴퓨터구조","desc":"퀴즈 1 복습하기","due_date":"2021.10.12","current_date":"2021/10/10 15.05.07","is_completed":0,"id":4}
+{"category":"과제","title":"실전프로젝트-중간","desc":"중간 프로젝트 전략 세우기","due_date":"2021.10.14","current_date":"2021/10/10 15.26.36","is_completed":1,"id":5}
+{"category":"동아리","title":"소울","desc":"동선 짜기","due_date":"2021.10.10","current_date":"2021/10/10 15.27.04","is_completed":1,"id":6}
+{"category":"기타","title":"임원단","desc":"중파 배부","due_date":"2021.10.12","current_date":"2021/10/10 07.31.44","is_completed":1,"id":7}
+{"category":"기타","title":"약속","desc":"점심 육회비빔밥","due_date":"2021.10.10","current_date":"2021/10/10 07.41.59","is_completed":1,"id":8}
+{"category":"기타","title":"저녁약속","desc":"저녁 떡볶이","due_date":"2021.10.10","current_date":"2021/10/10 07.32.35","is_completed":1,"id":9}
+{"category":"과제","title":"실전프로젝트-중간1","desc":"중간 프로젝트 보고서 만들기","due_date":"2021.10.16","current_date":"2021/10/16 08.53.30","is_completed":0,"id":10}
+{"category":"시험","title":"컴퓨터구조-중간","due_date":"2021.10.21","current_date":"2021/10/16 08.53.30","is_completed":0,"id":11}
+{"category":"시험","title":"이산수학-중간","due_date":"2021.10.22","current_date":"2021/10/16 08.53.30","is_completed":0,"id":12}
+{"category":"알바","title":"GS25-1","due_date":"2021.10.19","current_date":"2021/10/16 08.53.30","is_completed":0,"id":13}
+{"category":"알바","title":"GS25-2","due_date":"2021.10.22","current_date":"2021/10/16 08.53.30","is_completed":0,"id":14}
+{"category":"알바","title":"GS25-3","due_date":"2021.10.26","current_date":"2021/10/16 08.53.30","is_completed":0,"id":15}
+{"category":"알바","title":"GS25-4","due_date":"2021.10.29","current_date":"2021/10/16 08.53.30","is_completed":0,"id":16}
+{"category":"공부","title":"컴퓨터구조-복습1","desc":"chapter 1 복습","due_date":"2021.10.20","current_date":"2021/10/16 08.53.30","is_completed":0,"id":17}
+{"category":"공부","title":"컴퓨터구조-복습2","desc":"chapter 2 복습","due_date":"2021.10.20","current_date":"2021/10/16 08.53.30","is_completed":0,"id":18}
+{"category":"공부","title":"컴퓨터구조-복습3","desc":"chapter 3 복습","due_date":"2021.10.20","current_date":"2021/10/16 08.53.30","is_completed":0,"id":19}
+{"category":"공부","title":"컴퓨터구조-복습4","desc":"chapter 4 복습","due_date":"2021.10.20","current_date":"2021/10/16 08.53.30","is_completed":0,"id":20}
+{"category":"공부","title":"이산수학-복습1","desc":"chapter 1 복습","due_date":"2021.10.21","current_date":"2021/10/16 08.53.30","is_completed":0,"id":21}
+{"category":"공부","title":"이산수학-복습2","desc":"chapter 2 복습","due_date":"2021.10.21","current_date":"2021/10/16 08.53.30","is_completed":0,"id":22}
+{"category":"공부","title":"이산수학-복습3","desc":"chapter 3 복습","due_date":"2021.10.21","current_date":"2021/10/16 08.53.30","is_completed":0,"id":23}
+{"category":"과제","title":"공학설계입문","desc":"assignment 3","due_date":"2021.10.17","current_date":"2021/10/16 08.53.30","is_completed":0,"id":24}
+{"category":"동아리","title":"소울-수화제","due_date":"2021.11.13","current_date":"2021/10/16 08.53.30","is_completed":0,"id":25}
+{"category":"동아리","title":"소울-자피","due_date":"2021.10.25","current_date":"2021/10/16 08.53.30","is_completed":0,"id":26}
+{"category":"동아리","title":"소울-선피","due_date":"2021.11.01","current_date":"2021/10/16 08.53.30","is_completed":0,"id":27}
+{"category":"동아리","title":"20정기회의1","due_date":"2021.10.17","current_date":"2021/10/16 08.53.30","is_completed":0,"id":28}
+{"category":"동아리","title":"20정기회의2","due_date":"2021.10.24","current_date":"2021/10/16 08.53.30","is_completed":0,"id":29}
+{"category":"동아리","title":"20정기회의3","due_date":"2021.10.31","current_date":"2021/10/16 08.53.30","is_completed":0,"id":30}
+{"category":"동아리","title":"20정기회의4","due_date":"2021.11.07","current_date":"2021/10/16 08.53.30","is_completed":0,"id":31}
+{"category":"방학","title":"운전면허","due_date":"2022.02.28","current_date":"2021/10/16 08.53.30","is_completed":0,"id":32}
+{"category":"방학","title":"라식","desc":"병원 알아보기","due_date":"2022.02.28","current_date":"2021/10/16 08.53.30","is_completed":0,"id":33}
+{"category":"과제","title":"EAP-1","desc":"module3 주제 정하기","due_date":"2021.10.24","current_date":"2021/10/16 08.53.30","is_completed":0,"id":34}
+{"category":"과제","title":"EAP-2","desc":"module3 내용 정리하기","due_date":"2021.10.31","current_date":"2021/10/16 08.53.30","is_completed":0,"id":35}
+{"category":"과제","title":"EAP-3","desc":"module3 발표 대본 작성하기","due_date":"2021.11.10","current_date":"2021/10/16 08.53.30","is_completed":0,"id":36}
+{"category":"과제","title":"EAP-4","desc":"module3 발표 영상 찍기","due_date":"2021.11.27","current_date":"2021/10/16 08.53.30","is_completed":0,"id":37}
+{"category":"과제","title":"EAP-5","desc":"module2 팀플 시간 잡기","due_date":"2021.10.24","current_date":"2021/10/16 08.53.30","is_completed":0,"id":38}
+{"category":"과제","title":"EAP-6","desc":"module2 영상 찍기","due_date":"2021.11.27","current_date":"2021/10/16 08.53.30","is_completed":0,"id":39}
+{"category":"과제","title":"EAP-7","desc":"module4 outline 작성하기","due_date":"2021.11.06","current_date":"2021/10/16 08.53.30","is_completed":0,"id":40}
+{"category":"과제","title":"EAP-8","desc":"module4 rough draft 작성하기","due_date":"2021.12.04","current_date":"2021/10/16 08.53.30","is_completed":0,"id":41}
+{"category":"과제","title":"EAP-9","desc":"module4 final draft 작성하기","due_date":"2021.12.14","current_date":"2021/10/16 08.53.30","is_completed":0,"id":42}
+{"category":"공부","title":"이산수학-복습3","desc":"chapter 4 복습","due_date":"2021.10.21","current_date":"2021/10/16 08.53.30","is_completed":0,"id":43}
+{"category":"방학","title":"컴활자격증","due_date":"2022.02.28","current_date":"2021/10/16 08.53.30","is_completed":0,"id":44}
+{"category":"방학","title":"토익","desc":"졸업영어성적 제출하기","due_date":"2022.02.28","current_date":"2021/10/16 08.53.30","is_completed":0,"id":45}
+{"category":"동아리","title":"소울-사회봉사1","desc":"최종보고서 작성 공지하기","due_date":"2021.12.05","current_date":"2021/10/16 08.53.30","is_completed":0,"id":46}
+{"category":"동아리","title":"소울-사회봉사2","desc":"최종보고서 제출하기","due_date":"2021.12.08","current_date":"2021/10/16 08.53.30","is_completed":0,"id":47}
+{"category":"동아리","title":"소울-추가연습1","desc":"달리기","due_date":"2021.10.21","current_date":"2021/10/16 08.53.30","is_completed":0,"id":48}
+{"category":"동아리","title":"소울-추가연습2","desc":"하나님의 부르심","due_date":"2021.10.24","current_date":"2021/10/16 08.53.30","is_completed":0,"id":49}
+{"category":"동아리","title":"소울-의상","desc":"의상 공지하기","due_date":"2021.10.24","current_date":"2021/10/16 08.53.30","is_completed":0,"id":50}

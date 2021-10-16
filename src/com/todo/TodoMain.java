@@ -14,6 +14,7 @@ public class TodoMain {
 		TodoList l = new TodoList();
 		//l.importData("todolist.txt");
 		TodoUtil u = new TodoUtil();
+		u.loadgson(l, "todolist_gson.txt");
 		boolean isList = false;
 		boolean quit = false;
 		Menu.displaymenu();
@@ -100,5 +101,6 @@ public class TodoMain {
 		} while (!quit);
 		
 		u.saveList(l,"todolist.txt");
+		u.savegson(l,"todolist_gson.txt");
 	}
 }

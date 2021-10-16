@@ -4,15 +4,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TodoItem {
+	private String category;
 	private String title;
 	private String desc;
-	private String current_date;
-	private String category;
 	private String due_date;
+	private String current_date;
 	private int is_completed;
+	private int priority, progress;
 	private int id;
 
-	public TodoItem(String category, String title, String desc, String due_date, int is_completed) {
+	public TodoItem(String category, String title, String desc, String due_date, int is_completed, int priority, int progress) {
 		this.category = category;
 		this.title = title;
 		this.desc = desc;
@@ -20,17 +21,37 @@ public class TodoItem {
 		this.is_completed = is_completed;
 		SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd kk.mm.ss");
 		this.current_date = f.format(new Date());
+		this.priority = priority;
+		this.progress = progress;
 	}
 	
-	public TodoItem(String category, String title, String desc, String due_date, String time, int is_completed) {
+	public TodoItem(String category, String title, String desc, String due_date, String time, int is_completed, int priority, int progress) {
 		this.category = category;
 		this.title = title;
 		this.desc = desc;
 		this.due_date = due_date;
 		this.current_date = time;
 		this.is_completed = is_completed;
+		this.priority = priority;
+		this.progress = progress;
 	}
 	
+	public int getProgress() {
+		return progress;
+	}
+
+	public void setProgress(int progress) {
+		this.progress = progress;
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -89,11 +110,11 @@ public class TodoItem {
 
 	@Override
 	public String toString() {
-		return  "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date + " - " + is_completed + "\n";
+		return  "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date + " - " + is_completed + " - " + priority + " - " + progress + "\n";
 	}
 	
 	public String toSaveString() {
-		return category + "##" + title + "##" + desc + "##" + due_date + "##" + current_date + "##" + is_completed + "\n";
+		return category + "##" + title + "##" + desc + "##" + due_date + "##" + current_date + "##" + is_completed + "##" + priority + "##" + progress + "\n";
 	}
 
 
