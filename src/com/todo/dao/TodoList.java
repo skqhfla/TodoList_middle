@@ -95,6 +95,23 @@ public class TodoList {
 		return count;
 	}
 	
+	
+	public int progressItem(int index, int c_progress) {
+		String sql = "update list set progress = ? " + " where id = ?;";
+		PreparedStatement pstmt;
+		int count = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, c_progress);
+			pstmt.setInt(2, index);
+			count = pstmt.executeUpdate();
+			pstmt.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
 	public ArrayList<String> getCategories(){
 		ArrayList<String> list = new ArrayList<String>();
 		Statement stmt;

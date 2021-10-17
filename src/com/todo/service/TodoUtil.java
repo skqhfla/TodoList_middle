@@ -187,6 +187,19 @@ public class TodoUtil {
 		System.out.println("완료되었습니다.\n");
 	}
 	
+	public void progressItem(TodoList l) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("[진행]\n" + "진행률을 변경할 항목의 번호를 입력하시오 > ");
+		
+		int index = sc.nextInt();
+		
+		System.out.print("진행률을 입력하시오.");
+		int c_progress = sc.nextInt();
+		
+		if(l.progressItem(index, c_progress) > 0)
+			System.out.println("완료되었습니다.\n");
+	}
+	
 	public void updateItem(TodoList l) {
 		
 		String new_category, new_title, new_desc, new_due_date;

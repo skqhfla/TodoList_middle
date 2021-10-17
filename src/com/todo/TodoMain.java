@@ -68,6 +68,10 @@ public class TodoMain {
 				System.out.println("완료된 항목입니다.");
 				u.listAll(l, 1);
 				break;
+				
+			case "progress":
+				u.progressItem(l);
+				break;
 
 			case "exit":
 				quit = true;
